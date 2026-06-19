@@ -47,7 +47,7 @@ public class SwitchPatternPreview implements Demo {
     }
 
     /** switch 直接对类型/守卫进行模式匹配，无需显式强转；密封类型支持穷尽性检查。 */
-    private String formatValue(Object o) {
+    String formatValue(Object o) {
         return switch (o) {
             case Integer i && i > 0 -> "positive int " + i;
             case Integer i -> "non-positive int " + i;

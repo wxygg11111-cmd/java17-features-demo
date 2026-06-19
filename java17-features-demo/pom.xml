@@ -39,6 +39,9 @@
                     <excludes>
                         <exclude>**/preview/*.java</exclude>
                     </excludes>
+                    <testExcludes>
+                        <exclude>**/preview/*.java</exclude>
+                    </testExcludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -63,6 +66,9 @@
     <profiles>
         <profile>
             <id>preview</id>
+            <properties>
+                <argLine>--enable-preview</argLine>
+            </properties>
             <build>
                 <plugins>
                     <plugin>

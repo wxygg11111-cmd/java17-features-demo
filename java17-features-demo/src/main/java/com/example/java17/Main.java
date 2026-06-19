@@ -9,6 +9,9 @@ import com.example.java17.collections.CollectionsDemo;
 import com.example.java17.localtypes.LocalTypeDemo;
 import com.example.java17.switchexpr.SwitchExpressionDemo;
 import com.example.java17.textblocks.TextBlockDemo;
+import com.example.java17.random.RandomDemo;
+import com.example.java17.serialization.SerializationDemo;
+import com.example.java17.varfeature.VarDemo;
 import java.util.List;
 
 /**
@@ -27,7 +30,10 @@ public class Main {
                 new StreamApiDemo(),
                 new CollectionsDemo(),
                 new LocalTypeDemo(),
-                new MiscDemo());
+                new MiscDemo(),
+                new VarDemo(),
+                new RandomDemo(),
+                new SerializationDemo());
 
         System.out.println("=".repeat(60));
         System.out.println(" Java 17 Features Demo  (JDK " + System.getProperty("java.version") + ")");

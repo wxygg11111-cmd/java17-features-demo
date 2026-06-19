@@ -20,6 +20,6 @@ jobs:
       - name: Test (stable features)
         working-directory: java17-features-demo
         run: ./mvnw -B test
-      - name: Compile (preview features)
+      - name: Test (preview features)
         working-directory: java17-features-demo
-        run: ./mvnw -B -Ppreview compile
+        run: ./mvnw -B -Ppreview test

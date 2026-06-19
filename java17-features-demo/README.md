@@ -18,6 +18,9 @@
 | `collections` | 不可变集合工厂、`Collectors.teeing` | Java 9-12 | 否 |
 | `localtypes` | 局部类型声明（record/enum） | JEP 395（Java 16） | 否 |
 | `misc` | HexFormat、String 增强、Helpful NPE | Java 11–17 | 否 |
+| `varfeature` | 局部变量类型推断 `var` | JEP 286（Java 10 正式） | 否 |
+| `random` | Enhanced PRNG（`RandomGenerator`/`Factory`） | JEP 356（Java 17 正式） | 否 |
+| `serialization` | 上下文反序列化过滤器 | JEP 415（Java 17 正式） | 否 |
 | `preview` | Pattern Matching for switch | JEP 406（Java 17 预览） | **是** |
 
 每个演示实现公共接口 `Demo`（`title()` + `run()`），由 `Main` 统一调度。
@@ -39,6 +42,9 @@ java17-features-demo/
     ├── switchexpr/SwitchExpressionDemo.java
     ├── streamapi/StreamApiDemo.java
     ├── misc/MiscDemo.java
+    ├── varfeature/VarDemo.java
+    ├── random/RandomDemo.java
+    ├── serialization/SerializationDemo.java
     └── preview/SwitchPatternPreview.java   # 需 --enable-preview
 ```
 
@@ -102,15 +108,16 @@ java --enable-preview -cp out com.example.java17.preview.SwitchPatternPreview
 ## 测试
 
 工程含 JUnit 5 单元测试，覆盖各演示的核心逻辑（record 校验与方法、密封类型面积、
-instanceof 分类、switch 表达式、Stream 展开、HexFormat 互转）。
+instanceof 分类、switch 表达式、Stream 展开、HexFormat 互转、PRNG 复现与边界、反序列化过滤器、var 推断等）。
 
 ```bash
 cd java17-features-demo
-./mvnw test                  # 运行全部测试
+./mvnw test                         # 运行全部稳定特性测试
+./mvnw -Ppreview test               # 运行含预览特性的全部测试（--enable-preview）
 ./mvnw -Dtest=RecordDemoTest test   # 运行单个测试类
 ```
 
-CI（`.github/workflows/ci.yml`）会在每次 push/PR 时自动运行 `./mvnw test`。
+CI（`.github/workflows/ci.yml`）会在每次 push/PR 时自动运行 `./mvnw test` 与 `./mvnw -Ppreview test`（后者编译并测试预览特性）。
 
 ## 关于预览特性
 
