@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Compile (stable features)
+        working-directory: java17-features-demo
+        run: mvn -B compile
+      - name: Compile (preview features)
+        working-directory: java17-features-demo
+        run: mvn -B -Ppreview compile

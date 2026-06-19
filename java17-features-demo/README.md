@@ -1,5 +1,8 @@
 # Java 17 Features Demo
 
+[![CI](https://github.com/wxygg11111-cmd/java17-features-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/wxygg11111-cmd/java17-features-demo/actions/workflows/ci.yml)
+
+
 一个纯 Java 17 工程，集中演示 Java 9–17 期间引入、并在 Java 17（LTS）中可用的语言与 API 特性。零第三方依赖，仅用 JDK 标准库。
 
 ## 演示内容
