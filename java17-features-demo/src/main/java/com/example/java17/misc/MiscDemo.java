@@ -11,6 +11,16 @@ import java.util.stream.IntStream;
  */
 public class MiscDemo implements Demo {
 
+    /** HexFormat（Java 17）：字节 -> 十六进制字符串。 */
+    static String toHex(byte[] data) {
+        return HexFormat.of().formatHex(data);
+    }
+
+    /** HexFormat（Java 17）：十六进制字符串 -> 字节。 */
+    static byte[] fromHex(String hexString) {
+        return HexFormat.of().parseHex(hexString);
+    }
+
     @Override
     public String title() {
         return "Misc: HexFormat, String API & Helpful NPE";
@@ -19,11 +29,10 @@ public class MiscDemo implements Demo {
     @Override
     public void run() {
         // HexFormat（Java 17）：字节与十六进制字符串互转
-        HexFormat hex = HexFormat.of();
         byte[] data = {0x01, (byte) 0xFF, 0x4A, 0x7e};
-        String hexString = hex.formatHex(data);
+        String hexString = toHex(data);
         System.out.println("HexFormat.formatHex = " + hexString);
-        byte[] decoded = hex.parseHex(hexString);
+        byte[] decoded = fromHex(hexString);
         System.out.println("HexFormat.parseHex back = "
                 + IntStream.range(0, decoded.length)
                         .map(i -> decoded[i] & 0xFF)

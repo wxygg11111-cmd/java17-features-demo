@@ -23,7 +23,7 @@ public class SwitchExpressionDemo implements Demo {
     }
 
     /** 多标签合并、箭头直接返回值。 */
-    private String dayType(Day day) {
+    String dayType(Day day) {
         return switch (day) {
             case MONDAY, FRIDAY, SUNDAY -> "fun day";
             case TUESDAY -> "boring";
@@ -33,7 +33,7 @@ public class SwitchExpressionDemo implements Demo {
     }
 
     /** 代码块中用 yield 返回值。 */
-    private int score(Day day) {
+    int score(Day day) {
         return switch (day) {
             case MONDAY, FRIDAY, SUNDAY -> {
                 int len = day.name().length();

@@ -97,6 +97,19 @@ find src/main/java -name '*.java' -print0 \
 java --enable-preview -cp out com.example.java17.preview.SwitchPatternPreview
 ```
 
+## 测试
+
+工程含 JUnit 5 单元测试，覆盖各演示的核心逻辑（record 校验与方法、密封类型面积、
+instanceof 分类、switch 表达式、Stream 展开、HexFormat 互转）。
+
+```bash
+cd java17-features-demo
+./mvnw test                  # 运行全部测试
+./mvnw -Dtest=RecordDemoTest test   # 运行单个测试类
+```
+
+CI（`.github/workflows/ci.yml`）会在每次 push/PR 时自动运行 `./mvnw test`。
+
 ## 关于预览特性
 
 `preview/SwitchPatternPreview.java` 使用了 Java 17 的预览特性 *Pattern Matching for switch*（JEP 406）。该特性在 Java 17 为预览，编译与运行都必须加 `--enable-preview`，故单独提供 `build.sh preview` 目标，未并入主程序。它在 Java 21 转为正式特性。

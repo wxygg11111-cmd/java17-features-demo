@@ -34,7 +34,7 @@ public class PatternMatchingDemo implements Demo {
         }
     }
 
-    private String classify(Object obj) {
+    String classify(Object obj) {
         if (obj instanceof String s) {
             return "String of length " + s.length() + ": " + s;
         } else if (obj instanceof Integer i) {

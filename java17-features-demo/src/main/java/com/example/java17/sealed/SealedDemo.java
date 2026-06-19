@@ -75,7 +75,7 @@ public class SealedDemo implements Demo {
         System.out.println("describe(first) = " + describe(shapes[0]));
     }
 
-    private String describe(Shape shape) {
+    String describe(Shape shape) {
         if (shape instanceof Circle c) {
             return "a circle of radius " + c.radius();
         } else if (shape instanceof Rectangle r) {
