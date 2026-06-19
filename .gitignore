@@ -1,7 +1,28 @@
+# --- local toolchain (env-specific, not part of repo) ---
 .tools/
 .m2/
 /mvn
 env.sh
+
+# --- Java build output ---
 target/
 out/
 *.class
+
+# --- Maven Wrapper local cache (wrapper jar is downloaded on demand) ---
+.mvn/wrapper/maven-wrapper.jar
+
+# --- IDE ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+.factorypath
+
+# --- OS ---
+.DS_Store
+Thumbs.db

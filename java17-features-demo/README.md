@@ -50,6 +50,17 @@ java -version
 
 ## 使用方式
 
+### 方式零：Maven Wrapper（无需预装 Maven）
+
+```bash
+cd java17-features-demo
+./mvnw compile             # 编译稳定特性
+./mvnw exec:java           # 运行主程序
+./mvnw -Ppreview compile   # 编译预览特性
+```
+
+首次运行 `./mvnw` 会自动下载 Maven 3.9.9 到本地缓存。
+
 ### 方式一：build.sh（无需 Maven）
 
 ```bash
