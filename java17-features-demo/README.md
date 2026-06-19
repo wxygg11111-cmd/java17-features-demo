@@ -15,6 +15,8 @@
 | `textblocks` | Text Blocks | JEP 378（Java 15 正式） | 否 |
 | `switchexpr` | Switch Expressions | JEP 361（Java 14 正式） | 否 |
 | `streamapi` | `Stream.toList()` / `mapMulti` | Java 16 | 否 |
+| `collections` | 不可变集合工厂、`Collectors.teeing` | Java 9-12 | 否 |
+| `localtypes` | 局部类型声明（record/enum） | JEP 395（Java 16） | 否 |
 | `misc` | HexFormat、String 增强、Helpful NPE | Java 11–17 | 否 |
 | `preview` | Pattern Matching for switch | JEP 406（Java 17 预览） | **是** |
 

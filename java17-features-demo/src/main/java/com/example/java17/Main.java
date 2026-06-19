@@ -5,6 +5,8 @@ import com.example.java17.patternmatching.PatternMatchingDemo;
 import com.example.java17.records.RecordDemo;
 import com.example.java17.sealed.SealedDemo;
 import com.example.java17.streamapi.StreamApiDemo;
+import com.example.java17.collections.CollectionsDemo;
+import com.example.java17.localtypes.LocalTypeDemo;
 import com.example.java17.switchexpr.SwitchExpressionDemo;
 import com.example.java17.textblocks.TextBlockDemo;
 import java.util.List;
@@ -23,6 +25,8 @@ public class Main {
                 new TextBlockDemo(),
                 new SwitchExpressionDemo(),
                 new StreamApiDemo(),
+                new CollectionsDemo(),
+                new LocalTypeDemo(),
                 new MiscDemo());
 
         System.out.println("=".repeat(60));
